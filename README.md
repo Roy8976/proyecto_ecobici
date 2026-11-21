@@ -24,11 +24,22 @@ Explorar los viajes registrados por Ecobici y responder dos preguntas descriptiv
 Los datos se extrajeron de fuentes oficiales 
 | Dataset | Descripción | Fuente |
 |---|---|---|
-| Viajes | Cada fila es un viaje de la estación de retiro (A) a la estación de arribo (B), con género, fecha y hora. Solo incluye el número de estación. | <https://ecobici.cdmx.gob.mx/en/open-data/> |
+| ecobici_2026_%% | Cada fila es un viaje de la estación de retiro (A) a la estación de arribo (B), con género, fecha y hora| <https://ecobici.cdmx.gob.mx/en/open-data/> |
 | Estaciones | Georreferenciación (nombre, latitud, longitud) de cada estación por ID. | <https://datos.cdmx.gob.mx/dataset/cicloestaciones-ecobici-nuevo-sistema/resource/e764a27c-2043-42e8-a17f-5a04674b0f1b?view_id=91c9d729-4d80-43c3-ac38-f234bdb147ea> |
 
 - **Periodo analizado:** <01/2026 – 03/2026>
-- **Unidad de observación:** Viajes.
+- **Unidad de observación:** Viajes
+## Procedencia
+Datos abiertos de viajes de Ecobici (CDMX), meses 2026-01 a 2026-03.
+Fuente: https://ecobici.mx/datos-abiertos/ (consultado el 21/nov/2026).
+Se descargan con `src/descarga.py`.
+
+## Licencia y condiciones de uso
+El sitio de la fuente no especifica una licencia para los datos históricos.
+Los archivos se incluyen sin modificar y con fines académicos, con atribución
+a Ecobici como fuente original. Los derechos sobre los datos pertenecen a sus
+publicadores.
+
 
 ## Estructura del repositorio
 
@@ -51,7 +62,7 @@ ecobici-eda/
 
 ## Cómo reproducir el análisis
 
-**Requisitos:** Python 3.10 o superior y Git.
+**Requisitos:** Python 3.12 o superior y Git.
 
 1. Clonar el repositorio:
    ```bash
@@ -60,8 +71,9 @@ ecobici-eda/
    ```
 2. Crear y activar un entorno virtual:
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate        # Windows: .venv\Scripts\activate
+   python3.12 -m venv .venv
+   source .venv/bin/activate
+   python --version     # debe mostrar 3.12 o superior       # Windows: .venv\Scripts\activate
    ```
 3. Instalar las dependencias:
    ```bash
@@ -72,10 +84,11 @@ ecobici-eda/
    jupyter lab notebooks/01_eda_ecobici.ipynb
    ```
 
-Las figuras y tablas se guardan en `results/` y los datos limpios en `data/processed/`.
+Las figuras y tablas se guardan en `results/` 
 
 ## Contenido del análisis
 
+0. Configuración de los datos
 1. Comprensión de los datos
 2. Exploración y estadística descriptiva
 3. Calidad, limpieza y transformación (decisiones justificadas en `docs/decisiones_limpieza.md`)
@@ -90,10 +103,4 @@ Las figuras y tablas se guardan en `results/` y los datos limpios en `data/proce
 
 <EJ.: periodo acotado, registros sin género, no se infiere causalidad>
 
-## Versión final
 
-Etiqueta (tag): `v1.0-entrega`
-
-## Equipo
-
-Ver [`CONTRIBUCIONES.md`](CONTRIBUCIONES.md).
