@@ -3,6 +3,15 @@
 Análisis exploratorio (EDA) reproducible de los viajes de Ecobici en la Ciudad de México.
 Proyecto integrador del Módulo I del diplomado *Métodos estadísticos y matemáticos para la ciencia de datos*.
 
+## Contribuciones
+
+| Integrante | Aportación sustantiva | Secciones del notebook | 
+| <Abril Helena Ortiz Soto> | | |
+| <Aranza Fernanda Ortiz Lozada> | | |
+| <Diego Morando Perez> | | |
+| <Rodrigo Perez Perez> | | |
+| <Rosalinda> | | |
+
 ## Objetivo
 
 Explorar los viajes registrados por Ecobici y responder dos preguntas descriptivas:
@@ -12,31 +21,27 @@ Explorar los viajes registrados por Ecobici y responder dos preguntas descriptiv
 
 ## Datos
 
+Los datos se extrajeron de fuentes oficiales 
 | Dataset | Descripción | Fuente |
 |---|---|---|
-| Viajes | Cada fila es un viaje de la estación de retiro (A) a la estación de arribo (B), con género, fecha y hora. Solo incluye el número de estación. | <ENLACE A LA FUENTE OFICIAL> |
-| Estaciones | Georreferenciación (nombre, latitud, longitud) de cada estación por ID. | <ENLACE> |
+| Viajes | Cada fila es un viaje de la estación de retiro (A) a la estación de arribo (B), con género, fecha y hora. Solo incluye el número de estación. | <https://ecobici.cdmx.gob.mx/en/open-data/> |
+| Estaciones | Georreferenciación (nombre, latitud, longitud) de cada estación por ID. | <https://datos.cdmx.gob.mx/dataset/cicloestaciones-ecobici-nuevo-sistema/resource/e764a27c-2043-42e8-a17f-5a04674b0f1b?view_id=91c9d729-4d80-43c3-ac38-f234bdb147ea> |
 
-- **Periodo analizado:** <MES/AÑO – MES/AÑO>
-- **Unidad de observación:** un viaje.
-- **Condiciones de uso / licencia:** <COPIAR LA LICENCIA O TÉRMINOS DE LA FUENTE>
-- Más detalle y diccionario de variables en [`data/README.md`](data/README.md).
+- **Periodo analizado:** <01/2026 – 03/2026>
+- **Unidad de observación:** Viajes.
 
 ## Estructura del repositorio
 
 ```
 ecobici-eda/
 ├── README.md
-├── CONTRIBUCIONES.md
 ├── requirements.txt
 ├── .gitignore
 ├── data/
-│   ├── README.md          # procedencia, licencia, diccionario de variables
-│   ├── raw/               # datos originales (no se modifican)
-│   └── processed/         # datos limpios generados por el notebook
+│   ├── raw/               # datos originales 
 ├── notebooks/
 │   └── 01_eda_ecobici.ipynb
-├── src/                   # funciones auxiliares (opcional)
+├── src/                   # funciones auxiliares y extracción de la data
 ├── results/
 │   ├── figures/           # gráficas exportadas
 │   └── tables/            # tablas resumen
